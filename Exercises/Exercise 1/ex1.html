@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enchanted Costume Quest</title>
+<style>
+body {
+font-family: 'Arial', sans-serif;
+text-align: center;
+margin: 50px;
+}
+</style>
+</head>
+<body>
+
+<h1>Enchanted Costume Quest</h1>
+
+<label for="creatureDropdown">Choose Your Magical Creature:</label>
+<select id="creatureDropdown">
+<option value="wizard">Wizard</option>
+<option value="dragon">Dragon</option>
+<option value="fairy">Fairy</option>
+<option value="unicorn">Unicorn</option>
+</select>
+
+<button onclick="getCostumeInfo()">Get Costume Info</button>
+
+<div id="costumeInfo"></div>
+
+<script>
+  function getCostumeInfo() {
+    const dropdown = document.getElementById("creatureDropdown");
+    const selectedCreature = dropdown.value;
+
+    let costumeInfo = "";
+
+    switch (selectedCreature) {
+      case "wizard":
+        costumeInfo = "Wizards should wear pointy hats and carry wands! Imagine the adventures they'll have with their magical attire.";
+        break;
+      case "dragon":
+        costumeInfo = "Dragons should wear fiery costumes and breathe imaginary fire! Picture the awe-inspiring sight of a dragon in a dazzling ensemble.";
+        break;
+      case "fairy":
+        costumeInfo = "Fairies should wear sparkly dresses and spread glitter magic! Envision the enchanting world of fairies adorned in shimmering costumes.";
+        break;
+      case "unicorn":
+        costumeInfo = "Unicorns should wear horned headbands and have rainbow-colored manes! Picture the majestic unicorns with their vibrant and magical costumes.";
+        break;
+      default:
+        costumeInfo = "Please select a magical creature.";
+    }
+
+    document.getElementById("costumeInfo").innerHTML = costumeInfo;
+  }
+</script>
+
+</body>
+</html>
